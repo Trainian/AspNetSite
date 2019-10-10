@@ -45,5 +45,15 @@ namespace AspNetSite.Controllers
         {
             return View();
         }
+
+        public IActionResult Create()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IActionResult Delete()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

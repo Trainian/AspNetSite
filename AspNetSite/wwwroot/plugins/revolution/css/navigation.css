@@ -1097,8 +1097,8 @@ website:    http://www.themepunch.com
     border:5px solid #fff;
 	box-sizing:content-box;
     box-shadow:0px 0px 3px 1px rgba(0,0,0,0.2);
-    -webkit-perspective:400;
-    perspective:400;
+    -webkit-perspective:400px;
+    perspective:400px;
     -webkit-transform:translatez(0.01px);
     transform:translatez(0.01px);
 }
@@ -1117,8 +1117,8 @@ website:    http://www.themepunch.com
   transition:all 0.3s;
   -webkit-transform-style:flat;
   transform-style:flat;
-  perspective:600;
-  -webkit-perspective:600;
+  perspective:600px;
+  -webkit-perspective:600px;
   transform: rotatex(-90deg);
   -webkit-transform: rotatex(-90deg);
   box-shadow:0px 0px 3px 1px rgba(0,0,0,0.2);
@@ -1368,8 +1368,8 @@ website:    http://www.themepunch.com
   border:5px solid #222;
   border-radius:50%;
   box-sizing:content-box;
-  -webkit-perspective:400;
-  perspective:400;
+  -webkit-perspective:400px;
+  perspective:400px;
   -webkit-transform:translateZ(0.01px);
   transform:translateZ(0.01px);
    transition:all 0.3s;
@@ -1392,8 +1392,8 @@ website:    http://www.themepunch.com
   transition:all 0.3s;
   -webkit-transform-style:flat;
   transform-style:flat;
-  perspective:600;
-  -webkit-perspective:600;
+  perspective:600px;
+  -webkit-perspective:600px;
   transform: scale(0);
   -webkit-transform: scale(0);
   transform-origin:50% 100%;
