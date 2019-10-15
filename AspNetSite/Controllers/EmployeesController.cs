@@ -21,7 +21,7 @@ namespace AspNetSite.Controllers
             return View(_employeesData.GetAllEmployee());
         }
 
-        [Route("{id}")]
+        [Route("details/{id}")]
         public IActionResult Details(int id)
         {
             var model = _employeesData.GetEmployeeById(id);
@@ -32,28 +32,48 @@ namespace AspNetSite.Controllers
             return View(model);
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("edit/{id?}")]
         public IActionResult Edit(int? id)
         {
-            return View();
+            Employee model;
+            if (id > 0)
+            {
+                model = _employeesData.GetEmployeeById(id.Value);
+                if (ReferenceEquals(null, model))
+                    return NotFound();
+                return View(model);
+            }
+            else
+                model = new Employee();
+            return View(model);
         }
 
         [HttpPost]
         [Route("edit/{id?}")]
         public IActionResult Edit(Employee model)
         {
-            return View();
+            if(model.Id > 0)
+            {
+                var dbmodel = _employeesData.GetEmployeeById(model.Id);
+
+                if(ReferenceEquals(null, dbmodel))
+                    return NotFound();
+
+                dbmodel.FullName = model.FullName;
+                dbmodel.Post = model.Post;
+            }
+            else
+            {
+                
+            }
+            return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Create()
+        [Route("delete/{id?}")]
+        public IActionResult Delete(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public IActionResult Delete()
-        {
-            throw new NotImplementedException();
+            return RedirectToAction(nameof(Index));
         }
     }
 }
