@@ -53,7 +53,7 @@ namespace AspNetSite.Controllers
         [Route("edit/{id?}")]
         public IActionResult Edit(Employee model)
         {
-            if(model.Id > 0)
+            if (model.Id > 0)
             {
                 var dbmodel = _employeesData.GetEmployeeById(model.Id);
 
@@ -65,7 +65,7 @@ namespace AspNetSite.Controllers
             }
             else
             {
-                
+                _employeesData.AddEmployee(model);
             }
             return RedirectToAction(nameof(Index));
         }
@@ -73,6 +73,14 @@ namespace AspNetSite.Controllers
         [Route("delete/{id?}")]
         public IActionResult Delete(int id)
         {
+            if (id > 0)
+            {
+                var model = _employeesData.GetEmployeeById(id);
+                if (ReferenceEquals(null, model))
+                    return NotFound();
+                _employeesData.DeletById(id);
+            }
+            else NotFound();
             return RedirectToAction(nameof(Index));
         }
     }
