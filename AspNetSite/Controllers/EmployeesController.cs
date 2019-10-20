@@ -53,21 +53,29 @@ namespace AspNetSite.Controllers
         [Route("edit/{id?}")]
         public IActionResult Edit(Employee model)
         {
-            if (model.Id > 0)
+            if (ModelState.IsValid)
             {
-                var dbmodel = _employeesData.GetEmployeeById(model.Id);
+                if (model.Id > 0)
+                {
+                    var dbmodel = _employeesData.GetEmployeeById(model.Id);
 
-                if(ReferenceEquals(null, dbmodel))
-                    return NotFound();
+                    if (ReferenceEquals(null, dbmodel))
+                        return NotFound();
 
-                dbmodel.FullName = model.FullName;
-                dbmodel.Post = model.Post;
+                    dbmodel.FullName = model.FullName;
+                    dbmodel.Post = model.Post;
+                }
+                else
+                {
+                    _employeesData.AddEmployee(model);
+                }
+
+                return RedirectToAction(nameof(Index));
             }
             else
             {
-                _employeesData.AddEmployee(model);
+                return View(model);
             }
-            return RedirectToAction(nameof(Index));
         }
 
         [Route("delete/{id?}")]

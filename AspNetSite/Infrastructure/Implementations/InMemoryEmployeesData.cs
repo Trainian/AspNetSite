@@ -21,7 +21,10 @@ namespace AspNetSite.Infrastructure.Implementations
         }
         public void AddEmployee(Employee employee)
         {
-            employee.Id = _employees.Max(x => x.Id) + 1;
+            if (_employees.Count != 0)
+                employee.Id = _employees.Max(x => x.Id) + 1;
+            else
+                employee.Id = 1;
             _employees.Add(employee);
         }
 

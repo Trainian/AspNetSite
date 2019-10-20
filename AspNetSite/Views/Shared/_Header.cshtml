@@ -15,28 +15,27 @@
             <div class="collapse navbar-collapse main-navigation mainmenu " id="main-nav-bar">
 
                 <ul class="nav navbar-nav navigation-box">
-                    <li class="current">
-                        <a href="index.html">Домашняя</a>
-                    </li>
-                    <li> <a href="about.html">О нас</a> </li>
+                    <li> <a asp-controller="Home" asp-action="Index">Домашняя</a> </li>
+                    <li> <a asp-controller="Employees" asp-action="Index">Работники</a> </li>
+                    <li> <a href="#">О нас</a> </li>
                     <li>
                         <a href="#">Страницы</a>
                         <ul class="sub-menu">
-                            <li> <a href="404.html">404</a> </li>
-                            <li> <a href="pricing.html">Pricing</a> </li>
-                            <li><a href="faq.html">FAQ Page</a></li>
-                            <li><a href="team.html">Team</a></li>
-                            <li><a href="testimonials.html">Testimonials</a></li>
+                            <li> <a asp-controller="Home" asp-action="Error">404</a> </li>
+                            <li> <a href="#">Pricing</a> </li>
+                            <li><a href="#">FAQ Page</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Testimonials</a></li>
                         </ul><!-- /.sub-menu -->
                     </li>
                     <li>
                         <a href="blog.html">Новости</a>
                         <ul class="sub-menu right-align">
-                            <li><a href="blog.html">Blog Classic</a></li>
-                            <li><a href="blog-details.html">Blog Details</a></li>
+                            <li><a href="#">Blog Classic</a></li>
+                            <li><a href="#">Blog Details</a></li>
                         </ul><!-- /.sub-menu -->
                     </li>
-                    <li> <a href="contact.html">Контакты</a> </li>
+                    <li> <a href="#">Контакты</a> </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
