@@ -19,6 +19,7 @@ namespace AspNetSite
         {
             services.AddMvc();
             services.AddSingleton<IEmployeesData, InMemoryEmployeesData>();
+            services.AddSingleton<IPositionData, InMemoryPositionData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
