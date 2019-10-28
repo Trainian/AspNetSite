@@ -11,6 +11,12 @@ namespace AspNetSite.Domain.Entities
         /// Должность
         /// </summary>
         public Position position { get; set; }
+
+        /// <summary>
+        /// Начальник
+        /// </summary>
+        public int? chiefId { get; set; }
+
         /// <summary>
         /// Ссылка на Фото
         /// </summary>

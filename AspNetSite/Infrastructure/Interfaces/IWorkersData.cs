@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AspNetSite.Domain.Entities;
+using AspNetSite.Domain.Filters;
 
 namespace AspNetSite.Infrastructure.Interfaces
 {
@@ -12,6 +13,6 @@ namespace AspNetSite.Infrastructure.Interfaces
         /// Список сотрудников
         /// </summary>
         /// <returns></returns>
-        IEnumerable<Worker> GetWorkers(0;)
+        IEnumerable<Worker> GetWorkers(WorkerFilter filter);
     }
 }
